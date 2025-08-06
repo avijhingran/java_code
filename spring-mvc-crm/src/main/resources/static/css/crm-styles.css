@@ -1,3 +1,4 @@
+/* Removes default margin and padding, set the font to "Inter" and apply a default text color (#222 is dark gray). */
 html, body {
   margin: 0;
   padding: 0;
@@ -5,7 +6,10 @@ html, body {
   color: #222;
 }
 
+/* Have a full-width container for the whole app and center the content horizontally. */
 #wrapper {width: 100%; margin-top: 0px;}
+
+/* Have a Green header bar with white and centered text inside and use flexbox for alignment (icons + text spacing). */
 #header {
   background: #09c332;
   margin-top: 0px;
@@ -18,6 +22,8 @@ html, body {
   align-items: center;
   gap: 10px;
 }
+
+/* Style the clickable home icon. */
 .home-icon {
   color: white;
   text-decoration: none;
@@ -37,6 +43,7 @@ html, body {
   margin-bottom: 15px;
 }
 
+/* For forms have full-width inputs with padding, rounded corners, and spacing */
 .crm-input {
   width: 100%;
   max-width: 100%;
@@ -48,6 +55,7 @@ html, body {
   margin-bottom: 10px;
 }
 
+/* For tables, have alternating row colors (zebra striping), Green headers with white text and Collapsed borders to avoid double lines. */
 table {
   border-collapse: collapse;
   border-bottom: 1px solid gray;
@@ -70,12 +78,14 @@ tr {
 tr:nth-child(even) {background: #FFFFFF;}
 tr:nth-child(odd) {background: #BBBBBB;}
 
+/* Make the background image fully cover the element. */
 .bg-cover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
+/* Push the footer to the bottom of the page if space allows. */
 footer {
   margin-top: auto;
 }
