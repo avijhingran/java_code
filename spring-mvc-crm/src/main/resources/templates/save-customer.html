@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: head">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+<div th:replace="fragments/header :: header">
+</div>
+<div id="wrapper">
+    <div id="container" class="page-padding">
+        <div id="content">
+            <h3>
+                Save Customer
+            </h3>
+            <form th:action="@{/customers/save}" th:object="${customer}" method="post">
+                <input type="hidden" th:field="*{id}" />
+                <div class="form-group row mb-3 align-items-center">
+                    <label class="col-sm-2 col-form-label">
+                        First name:
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="text" th:field="*{firstName}" class="crm-input form-control"
+                               required />
+                    </div>
+                </div>
+                <div class="form-group row mb-3 align-items-center">
+                    <label class="col-sm-2 col-form-label">
+                        Last name:
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="text" th:field="*{lastName}" class="crm-input form-control"
+                               required />
+                    </div>
+                </div>
+                <div class="form-group row mb-3 align-items-center">
+                    <label class="col-sm-2 col-form-label">
+                        Email:
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="email" th:field="*{email}" class="crm-input form-control"
+                               required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-warning">
+                                Save
+                            </button>
+                            <a href="/customers" class="btn btn-secondary">
+                                Back to List
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">
+</div>
+</body>
+
+</html>

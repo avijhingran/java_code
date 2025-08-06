@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head"></head>
+<body class="d-flex flex-column min-vh-100">
+
+<div th:replace="fragments/header :: header"></div>
+
+<div id="wrapper">
+  <div id="container" class="page-padding">
+    <div id="content">
+
+      <div class="mb-4">
+        <a th:href="@{/customers/new}" class="btn btn-warning">Add Customer</a>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="customer : ${customers}">
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.email}"></td>
+            <td>
+              <a th:href="@{/customers/edit/{id}(id=${customer.id})}">Update</a> |
+              <a th:href="@{/customers/delete/{id}(id=${customer.id})}">Delete</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
